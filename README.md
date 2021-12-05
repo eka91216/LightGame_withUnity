@@ -28,11 +28,11 @@ https://unity.com/kr/download 사이트로 접속하여 다운로드를 진행�
 # Code Style
 주로 언어는 C#을 사용한다고 언급한 바가 있습니다.
 
-코드 스타일에 관한 것은 차차 올릴 것입니다. 
+[Code Style Guide](https://github.com/eka91216/LightGame_withUnity/blob/main/CODESTYLE.md)
 
-코드양이 많진 않을 것으로 예상됩니다. 
+코드 스타일에 관한 것은 위의 링크에 차차 올릴 것입니다. 
 
-그리고 이는 저의 첫 프로젝트이기에 아직 미숙하여 코드를 작성하며 코드 스타일에 관한 사항을 공지하겠습니다.
+이는 저의 첫 프로젝트이기에 아직 미숙하여 코드를 작성하며 코드 스타일에 관한 사항을 공지하겠습니다.
 
 -------------
 # 사용한 Unity Assets
