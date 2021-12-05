@@ -7,6 +7,8 @@
 
 언어는 주로 C#을 사용하게 될 것이고, unity를 통해 만들고자 합니다.
 
+Please click [Here](https://github.com/eka91216/LightGame_withUnity/blob/main/README_ENG.md) for the English version of README.
+
 -------------
 # Unity download
 https://unity.com/kr/download 사이트로 접속하여 다운로드를 진행하시면 됩니다.
