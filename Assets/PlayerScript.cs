@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public GameObject m_GoalButton;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Destination" && MainManager.m_IsItem == true)
+        {
+            m_GoalButton.SetActive(true);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

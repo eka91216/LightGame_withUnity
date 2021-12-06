@@ -7,6 +7,7 @@ public class MainManager : MonoBehaviour
 {
     public GameObject m_CurrentPanel;
     public GameObject m_BeforePanel;
+    public GameObject m_MainPanel;
 
     public GameObject m_SheepPlayer;
     public GameObject m_CowPlayer;
@@ -24,11 +25,12 @@ public class MainManager : MonoBehaviour
 
     public GameObject m_Destination;
     public GameObject m_Item;
-    public bool m_Setting;
-        
+    public GameObject m_GoalButton;
+
     public static GameObject m_Player;
     public static GameObject m_Obstacle;
     public static bool GameStart;
+    public bool m_Setting;
     public static bool m_IsItem; //check Player take item
 
     // Start is called before the first frame update
@@ -96,6 +98,11 @@ public class MainManager : MonoBehaviour
 
             StartCoroutine(SpawnObstacle()); //Start Coroutine
         }
+
+        if(m_GoalButton.activeSelf == true)
+        {
+
+        }
     }
 
     IEnumerator SpawnObstacle()
@@ -109,16 +116,33 @@ public class MainManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
     }
 
+    public void GoalButton()
+    {
+        GameStart = false;
+        m_Setting = false;
+        if (m_MountainBackground.activeSelf == true) m_MountainBackground.SetActive(false);
+        if (m_DesertBackground.activeSelf == true) m_DesertBackground.SetActive(false);
+        if (m_UniverseBackground.activeSelf == true) m_UniverseBackground.SetActive(false);
+        if (m_SnowBackground.activeSelf == true) m_SnowBackground.SetActive(false);
+
+        //Destroy(GameObject.FindWithTag("TempForGame"));
+
+        StopCoroutine(SpawnObstacle());
+        m_CurrentPanel.SetActive(false);
+        m_GoalButton.SetActive(false);
+        m_MainPanel.SetActive(true);
+    }
+
     public void BackButton()
     {
         GameStart = false;
+        m_Setting = false;
         if (m_MountainBackground.activeSelf == true) m_MountainBackground.SetActive(false);
         if (m_DesertBackground.activeSelf == true) m_DesertBackground.SetActive(false);
         if (m_UniverseBackground.activeSelf == true) m_UniverseBackground.SetActive(false);
         if (m_SnowBackground.activeSelf == true) m_SnowBackground.SetActive(false);
 
         Destroy(GameObject.FindWithTag("TempForGame"));
-
 
         StopCoroutine(SpawnObstacle());
         m_CurrentPanel.SetActive(false);

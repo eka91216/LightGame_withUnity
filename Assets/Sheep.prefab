@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1515694152550510096}
   m_Layer: 0
   m_Name: Sheep
-  m_TagString: TempForGame
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e83983ed8fcceb34abe437f22aed5988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_GamePanel: {fileID: 0}
+  m_GoalButton: {fileID: 0}
 --- !u!54 &-1782030184752199553
 Rigidbody:
   m_ObjectHideFlags: 0
