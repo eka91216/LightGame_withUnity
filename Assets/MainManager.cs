@@ -7,7 +7,11 @@ public class MainManager : MonoBehaviour
 {
     public GameObject m_CurrentPanel;
     public GameObject m_BeforePanel;
-    
+
+    public GameObject m_SheepPlayer;
+    public GameObject m_CowPlayer;
+    public GameObject m_ChickenPlayer;
+
     public GameObject m_MountainObstacle;
     public GameObject m_DesertObstacle;
     public GameObject m_UniverseObstacle;
@@ -18,17 +22,21 @@ public class MainManager : MonoBehaviour
     public GameObject m_UniverseBackground;
     public GameObject m_SnowBackground;
 
+    public GameObject m_Destination;
+    public GameObject m_Item;
+    public bool m_Setting;
+        
     public static GameObject m_Player;
     public static GameObject m_Obstacle;
     public static bool GameStart;
-
-    //float startWait;
-    float spawnWait;
+    public static bool m_IsItem; //check Player take item
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //initial setting
+        m_Setting = false;
+        m_IsItem = false;
     }
 
     // Update is called once per frame
@@ -38,36 +46,53 @@ public class MainManager : MonoBehaviour
 
         if(GameStart == true) //Game Start!!
         {
-            //Make Player
-            GameObject obj = (GameObject)Instantiate(m_Player, new Vector3(Random.Range(-9f, 9f), 6f, -3f), Quaternion.identity);
-
-            //Make Destination
-
-            if (m_Obstacle.tag == "MapChoice")
+            //initial Setting
+            if(m_Setting == false)
             {
-                switch (m_Obstacle.name)
+                if (m_Player.tag == "PlayerChoice")
                 {
-                    case "Mountain":
-                        m_Obstacle = m_MountainObstacle;
-                        m_MountainBackground.SetActive(true);
-                        break;
-                    case "Desert":
-                        m_Obstacle = m_DesertObstacle;
-                        m_DesertBackground.SetActive(true);
-                        break;
-                    case "Universe":
-                        m_Obstacle = m_UniverseObstacle;
-                        m_UniverseBackground.SetActive(true);
-                        break;
-                    case "Snow":
-                        m_Obstacle = m_SnowObstacle;
-                        m_SnowBackground.SetActive(true);
-                        break;
+                    switch (m_Player.name)
+                    {
+                        case "Sheep":
+                            m_Player = m_SheepPlayer;
+                            break;
+                        case "Cow":
+                            m_Player = m_CowPlayer;
+                            break;
+                        case "Chicken":
+                            m_Player = m_ChickenPlayer;
+                            break;
+                    }
                 }
-            }
 
-            //startWait = 3.0f;
-            spawnWait = 2.0f;
+                if (m_Obstacle.tag == "MapChoice")
+                {
+                    switch (m_Obstacle.name)
+                    {
+                        case "Mountain":
+                            m_Obstacle = m_MountainObstacle;
+                            m_MountainBackground.SetActive(true);
+                            break;
+                        case "Desert":
+                            m_Obstacle = m_DesertObstacle;
+                            m_DesertBackground.SetActive(true);
+                            break;
+                        case "Universe":
+                            m_Obstacle = m_UniverseObstacle;
+                            m_UniverseBackground.SetActive(true);
+                            break;
+                        case "Snow":
+                            m_Obstacle = m_SnowObstacle;
+                            m_SnowBackground.SetActive(true);
+                            break;
+                    }
+                }
+
+                Instantiate(m_Player, new Vector3(Random.Range(-8f, 8f), Random.Range(-4f, 4f), 0f), Quaternion.Euler(0, 90, 0));
+                Instantiate(m_Destination, new Vector3(Random.Range(-9f, 9f), Random.Range(-4f, 5.8f), 0f), Quaternion.Euler(270, 0, 0));
+                Instantiate(m_Item, new Vector3(Random.Range(-9f, 9f), Random.Range(-4f, 5.8f), 0f), Quaternion.identity);
+                m_Setting = true;
+            }
 
             StartCoroutine(SpawnObstacle()); //Start Coroutine
         }
@@ -75,9 +100,13 @@ public class MainManager : MonoBehaviour
 
     IEnumerator SpawnObstacle()
     {
-        //GameObject obj = (GameObject)Instantiate(m_Obstacle, new Vector3(Random.Range(-9f, 9f), 6f, -3f), Quaternion.identity);
+        /*if (m_Obstacle.name == "Cactus")
+        {
+            Instantiate(m_Obstacle, new Vector3(Random.Range(-9f, 9f), 6f, 0f), Quaternion.identity);
+        }
+        else Instantiate(m_Obstacle, new Vector3(Random.Range(-9f, 9f), 6f, 0f), Quaternion.Euler(270, 0, 0));*/
 
-        yield return new WaitForSeconds(spawnWait);
+        yield return new WaitForSeconds(2.0f);
     }
 
     public void BackButton()
@@ -87,6 +116,9 @@ public class MainManager : MonoBehaviour
         if (m_DesertBackground.activeSelf == true) m_DesertBackground.SetActive(false);
         if (m_UniverseBackground.activeSelf == true) m_UniverseBackground.SetActive(false);
         if (m_SnowBackground.activeSelf == true) m_SnowBackground.SetActive(false);
+
+        Destroy(GameObject.FindWithTag("TempForGame"));
+
 
         StopCoroutine(SpawnObstacle());
         m_CurrentPanel.SetActive(false);

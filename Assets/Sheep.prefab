@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 8705038385467375748}
   - component: {fileID: 8712788787850321478}
   - component: {fileID: 8785484219513584244}
+  - component: {fileID: 9220939604740156639}
+  - component: {fileID: -1782030184752199553}
+  - component: {fileID: 1515694152550510096}
   m_Layer: 0
   m_Name: Sheep
-  m_TagString: Player
+  m_TagString: TempForGame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,3 +104,44 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9220939604740156639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700408586185594152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83983ed8fcceb34abe437f22aed5988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &-1782030184752199553
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700408586185594152}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1515694152550510096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700408586185594152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5320264, y: 0.8927839, z: 1.2689813}
+  m_Center: {x: 0.00000005960466, y: 0.4438215, z: 0.119502574}
