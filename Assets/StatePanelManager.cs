@@ -29,6 +29,11 @@ public class StatePanelManager : MonoBehaviour
                 if (raycastHit.transform.gameObject.tag == "PlayerChoice")
                 {
                     m_BlankText.text = raycastHit.transform.gameObject.name;
+
+                    MainManager.m_Player = raycastHit.transform.gameObject;
+
+                    AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+                    audioSource.Play();
                 }
             }
         }

@@ -29,6 +29,11 @@ public class GameSetPanel : MonoBehaviour
                 if (raycastHit.transform.gameObject.tag == "MapChoice")
                 {
                     m_BlankText.text = raycastHit.transform.gameObject.name;
+                    
+                    MainManager.m_Obstacle = raycastHit.transform.gameObject;
+
+                    AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+                    audioSource.Play();
                 }
             }
         }
@@ -41,6 +46,7 @@ public class GameSetPanel : MonoBehaviour
             m_BlankText.text = "";
             m_CurrentPanel.SetActive(false);
             m_NextPanel.SetActive(true);
+            MainManager.GameStart = true; //Game Start
         }
     }
 
