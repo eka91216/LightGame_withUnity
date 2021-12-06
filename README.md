@@ -42,9 +42,6 @@ https://unity.com/kr/download 사이트로 접속하여 다운로드를 진행�
 [Cute GUI-Pack-Lite](https://assetstore.unity.com/packages/2d/gui/icons/cute-gui-pack-lite-202389)
 
 
-[Low Polygon Soccer Ball](https://assetstore.unity.com/packages/3d/low-polygon-soccer-ball-84382)
-
-
 [Free 2D Cartoon Parallax Background](https://assetstore.unity.com/packages/2d/environments/free-2d-cartoon-parallax-background-205812)
 
 
@@ -61,3 +58,6 @@ https://unity.com/kr/download 사이트로 접속하여 다운로드를 진행�
 
 
 [Low Poly Rock Models](https://assetstore.unity.com/packages/3d/environments/low-poly-rock-models-119245)
+
+
+[Retro Games Sound FX](https://assetstore.unity.com/packages/audio/sound-fx/retro-games-sound-fx-27280)
