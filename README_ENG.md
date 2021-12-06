@@ -26,8 +26,13 @@ https://unity.com/kr/download Please connect to the site and proceed with the do
 -------------
 # Code Style
 
-I have said that I mainly use C# for language. I'll gradually write the issue of code style. 
-It is expected that the code will not be large. and since it is my first project, it is still immature. so I will inform you of the code style while creating the code.
+I have said that I mainly use C# for language. 
+
+[Code Style Guide](https://github.com/eka91216/LightGame_withUnity/blob/main/CODESTYLE.md)
+
+Regarding the code style, I will post it gradually on the link above.
+
+This is my first project, so I'm still inexperienced, so I'll write the code and notify you of the code style.
 
 -------------
 # Used Unity Assets
