@@ -4,14 +4,30 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public GameObject m_GoalButton;
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Destination" && MainManager.m_IsItem == true)
+        if (other.gameObject.tag == "Destination")
         {
-            m_GoalButton.SetActive(true);
+            if (MainManager.m_IsItem == true)
+            {
+                AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+                audioSource.Play();
+            }
         }
+        if(other.gameObject.tag == "Item")
+        {
+            if (MainManager.m_IsItem == false)
+            {
+                AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+                audioSource.Play();
+            }
+        }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        //AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        //audioSource.Play();
     }
 
     // Start is called before the first frame update

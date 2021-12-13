@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemScript : MonoBehaviour
+public class ObstacleScript : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "Player") MainManager.m_IsItem = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            MainManager.m_IsFail = true;
+            //Destroy(gameObject);
+        }
     }
 
     // Start is called before the first frame update

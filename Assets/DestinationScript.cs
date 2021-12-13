@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemScript : MonoBehaviour
+public class DestinationScript : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player") MainManager.m_IsItem = true;
+        if (other.gameObject.tag == "Player")
+        {
+            if (MainManager.m_IsItem == true) MainManager.m_IsGoal = true;
+        }
     }
 
     // Start is called before the first frame update

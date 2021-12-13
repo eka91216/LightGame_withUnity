@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GamePanelManager : MonoBehaviour
 {
+    public GameObject m_Item;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -8,6 +8,8 @@ TagManager:
   - MapChoice
   - Obstacle
   - Map
+  - Item
+  - Destination
   layers:
   - Default
   - TransparentFX
